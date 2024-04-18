@@ -1,14 +1,19 @@
-def binary_search(A, key, low, high):
-    if(low<=high):
-        mid=(low+high)//2
-        if key==A[mid]:
-            return mid
-        elif key <A[mid]:
-            return binary_search(A, key, low, mid-1)
-        else :
-            return binary_search(A, key, mid+1, high)
-    return -1
-list=[5,7,11,16,20,28,34,39,42,45,51,55,60]
-print("리스트=",list)
-print("34의 위치-->", binary_search(list, 34,0,len(list)-1))
-print("33의 위치-->", binary_search(list, 33,0,len(list)-1))
+def sequential_search(list, key):
+    for j in list:
+        if j == key:
+            return key 
+        elif j > key:
+            return None 
+
+    return None  
+
+
+list = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+i = 11
+
+result = sequential_search(list, i)
+
+if result is not None:
+    print(f"{i}를 찾았습니다!")
+else:
+    print(f"{i}를 찾지 못했습니다.")
