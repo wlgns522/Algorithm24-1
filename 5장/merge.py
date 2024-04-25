@@ -1,4 +1,5 @@
 
+
 def merge(A, left, mid, right):
     sorted = [0] * len(A)
     k=left
@@ -20,7 +21,7 @@ def merge(A, left, mid, right):
 
 A[left:right+1] = sorted[left:right+1]
 
-def merge(A, left,,right):
+def merge_sort(A, left,right):
     if left<right :
         mid = (left + right) //2
         merge_sort(A, left, mid)
