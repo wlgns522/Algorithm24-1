@@ -1,7 +1,7 @@
 M =13
 table = [None]*M
 def hashFn(key) :
-    return key&M
+    return key%M
 
 def lp_insert(key) :
     id = hashFn(key)
@@ -21,7 +21,7 @@ def lp_search(key) :
             return None
         if table[id] == key :
             return table[id]
-        id = (id +1 + M) & M
+        id = (id +1) % M
         count -=1
     return None
 print(" 최초:", table)
@@ -30,4 +30,4 @@ lp_insert(27); print("27 삽입:", table)
 lp_insert(31); print("31 삽입:", table)
 lp_insert(12); print("12 삽입:", table)
 lp_insert(67); print("67 삽입:", table)
-print("12 탐색:", lp_search(12))
+print("39 탐색:", lp_search(39))
